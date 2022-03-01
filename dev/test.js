@@ -1,10 +1,32 @@
-const Blockchain = require ('./blockchain');
+// const Blockchain = require('./blockchain');
 
+// const bitcoin = new Blockchain();
+// bitcoin.createNewBlock('234', 'DF453GD4FGDGD4DFGD1G3', '65FG465FD4G5DFG1548D');
+// bitcoin.createNewBlock('553', 'BFERG7F6T438YFB4IUFGB4', '74TF8UGERUFGERIUFHERI');
+// bitcoin.createNewTransaction('435', 'AHSAN534TK34JBT3', 'TANVIR74UGYFBHJRV');
+// bitcoin.createNewBlock('54345', '487Y3TG3UIGHREGHROI', 'VNHIRTY74798TY4903W');
+// console.log(bitcoin);
+
+const Blockchain = require('./blockchain');
 const bitcoin = new Blockchain();
-bitcoin.createNewBlock('546','DF453GD4FGDGD4DFGD1G3','65FG465FD4G5DFG1548D');
-bitcoin.createNewBlock('155','45DF4SD5F41S53FS53FFD','FDS5F4SD5FSD4F4SDF4D');
-bitcoin.createNewBlock('546','FJGHGHF215321FG8G4F5G','DFG53G14DFG4D6GDF53G');
-bitcoin.createNewBlock('546','14GDF65G4DFGD32GDFDF5','GNJH7RTF8GHADFFGDF8G');
-bitcoin.getLastBlock();
 
-console.log(bitcoin.getFun());
+const previousBlockHash = 'XNEGR67TG34FUERFGH87FG';
+const currentBlockData = [
+    {
+        amount: 101,
+        sender: 'BFERYUGR634GVREIUBF',
+        recipient: 'VBERG74GF34BGG43'
+    },
+    {
+        amount: 64,
+        sender: '4TYBEGRIRENKGNERG',
+        recipient: 'YHGRIUBEFG9R8I34'
+    },
+    {
+        amount: 54,
+        sender: '4YTGHIROIEGJRFTTG',
+        recipient: 'YHG4ITB4IGBGREGH'
+    }
+];
+
+console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
