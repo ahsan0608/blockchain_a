@@ -3,6 +3,9 @@ const sha256 = require('sha256');
 function Blockchain() {
     this.chain = [];
     this.pendingTransactions = [];
+
+    //genesis block
+    this.createNewBlock(100, '0', '0');
 }
 
 Blockchain.prototype.createNewBlock = function (nonce, previousBlockHash, hash) {
@@ -46,6 +49,7 @@ Blockchain.prototype.proofOfWork = function (previousBlockHash, currentBlockData
     while (hash.substring(0, 4) !== '0000') {
         nonce++;
         hash = this.hashBlock(previousBlockHash, currentBlockData, nonce);
+        //console.log(hash);
     }
 
     return nonce;
